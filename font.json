@@ -7,8 +7,32 @@
   , "input": "src"
   , "output": [ "example.ttf" ]
   , "glyphs":
-    { "0x41": { "src": "testdata/a.svg" }
-    , "0x42": { "src": "testdata/b.svg" }
-    , "67": "testdata/c.svg"
+    { 
+        "0x61": { "src": "svg/a.svg" },
+        "0x62": { "src": "svg/b.svg" }, 
+        "0x63": { "src": "svg/c.svg" },
+        "0x64": { "src": "svg/d.svg" },
+        "0x65": { "src": "svg/e.svg" },
+        "0x66": { "src": "svg/f.svg" },
+        "0x67": { "src": "svg/g.svg" },
+        "0x68": { "src": "svg/h.svg" },
+        "0x69": { "src": "svg/i.svg" },
+        "0x70": { "src": "svg/j.svg" },
+        "0x71": { "src": "svg/k.svg" },
+        "0x72": { "src": "svg/l.svg" },
+        "0x73": { "src": "svg/m.svg" },
+        "0x74": { "src": "svg/n.svg" },
+        "0x75": { "src": "svg/o.svg" },
+        "0x76": { "src": "svg/p.svg" },
+        "0x77": { "src": "svg/q.svg" },
+        "0x78": { "src": "svg/r.svg" },
+        "0x79": { "src": "svg/s.svg" },
+        "0x80": { "src": "svg/t.svg" },
+        "0x81": { "src": "svg/u.svg" },
+        "0x82": { "src": "svg/v.svg" },
+        "0x83": { "src": "svg/w.svg" },
+        "0x84": { "src": "svg/x.svg" },
+        "0x85": { "src": "svg/y.svg" },
+        "0x86": { "src": "svg/z.svg" }
     }
   }
