@@ -1,0 +1,14 @@
+{ "props":
+    { "ascent": 800
+    , "descent": 200
+    , "em": 1000
+    , "family": "Example"
+    }
+  , "input": "src"
+  , "output": [ "example.ttf" ]
+  , "glyphs":
+    { "0x41": { "src": "testdata/a.svg" }
+    , "0x42": { "src": "testdata/b.svg" }
+    , "67": "testdata/c.svg"
+    }
+  }
