@@ -2,37 +2,46 @@
     { "ascent": 800
     , "descent": 200
     , "em": 1000
-    , "family": "Example"
+    , "family": "Hand Spoken"
     }
   , "input": "src"
-  , "output": [ "example.ttf" ]
   , "glyphs":
     { 
-        "0x61": { "src": "svg/a.svg" },
-        "0x62": { "src": "svg/b.svg" }, 
-        "0x63": { "src": "svg/c.svg" },
-        "0x64": { "src": "svg/d.svg" },
-        "0x65": { "src": "svg/e.svg" },
-        "0x66": { "src": "svg/f.svg" },
-        "0x67": { "src": "svg/g.svg" },
-        "0x68": { "src": "svg/h.svg" },
-        "0x69": { "src": "svg/i.svg" },
-        "0x70": { "src": "svg/j.svg" },
-        "0x71": { "src": "svg/k.svg" },
-        "0x72": { "src": "svg/l.svg" },
-        "0x73": { "src": "svg/m.svg" },
-        "0x74": { "src": "svg/n.svg" },
-        "0x75": { "src": "svg/o.svg" },
-        "0x76": { "src": "svg/p.svg" },
-        "0x77": { "src": "svg/q.svg" },
-        "0x78": { "src": "svg/r.svg" },
-        "0x79": { "src": "svg/s.svg" },
-        "0x80": { "src": "svg/t.svg" },
-        "0x81": { "src": "svg/u.svg" },
-        "0x82": { "src": "svg/v.svg" },
-        "0x83": { "src": "svg/w.svg" },
-        "0x84": { "src": "svg/x.svg" },
-        "0x85": { "src": "svg/y.svg" },
-        "0x86": { "src": "svg/z.svg" }
+        "0x30": { "src": "test_glyphs/0.svg" },
+        "0x31": { "src": "test_glyphs/1.svg" },
+        "0x32": { "src": "test_glyphs/2.svg" },
+        "0x33": { "src": "test_glyphs/3.svg" },
+        "0x34": { "src": "test_glyphs/4.svg" },
+        "0x35": { "src": "test_glyphs/5.svg" },
+        "0x36": { "src": "test_glyphs/6.svg" },
+        "0x37": { "src": "test_glyphs/7.svg" },
+        "0x38": { "src": "test_glyphs/8.svg" },
+        "0x39": { "src": "test_glyphs/9.svg" },
+        "0x61": { "src": "test_glyphs/a.svg" },
+        "0x62": { "src": "test_glyphs/b.svg" }, 
+        "0x63": { "src": "test_glyphs/c.svg" },
+        "0x64": { "src": "test_glyphs/d.svg" },
+        "0x65": { "src": "test_glyphs/e.svg" },
+        "0x66": { "src": "test_glyphs/f.svg" },
+        "0x67": { "src": "test_glyphs/g.svg" },
+        "0x68": { "src": "test_glyphs/h.svg" },
+        "0x69": { "src": "test_glyphs/i.svg" },
+        "0x70": { "src": "test_glyphs/j.svg" },
+        "0x71": { "src": "test_glyphs/k.svg" },
+        "0x72": { "src": "test_glyphs/l.svg" },
+        "0x73": { "src": "test_glyphs/m.svg" },
+        "0x74": { "src": "test_glyphs/n.svg" },
+        "0x75": { "src": "test_glyphs/o.svg" },
+        "0x76": { "src": "test_glyphs/p.svg" },
+        "0x77": { "src": "test_glyphs/q.svg" },
+        "0x78": { "src": "test_glyphs/r.svg" },
+        "0x79": { "src": "test_glyphs/s.svg" },
+        "0x80": { "src": "test_glyphs/t.svg" },
+        "0x81": { "src": "test_glyphs/u.svg" },
+        "0x82": { "src": "test_glyphs/v.svg" },
+        "0x83": { "src": "test_glyphs/w.svg" },
+        "0x84": { "src": "test_glyphs/x.svg" },
+        "0x85": { "src": "test_glyphs/y.svg" },
+        "0x86": { "src": "test_glyphs/z.svg" }
     }
   }

@@ -59,9 +59,10 @@ def main(config_file):
     font = fontforge.font()
     setProperties(font, config)
     addGlyphs(font, config)
-    for outfile in config['output']:
-        sys.stderr.write('Generating %s...\n' % outfile)
-        font.generate(outfile)
+    i = 0
+    while os.path.exists('handspoken-'+str(i)+'.ttf'):
+        i += 1
+    font.generate('handspoken-'+str(i)+'.ttf')
 
 if __name__ == '__main__':
     main('font.json')
