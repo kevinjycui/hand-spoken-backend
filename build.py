@@ -1,6 +1,7 @@
 import image_processor
 import data_processor
 import font_generator
+import os
 
 def main(dir):
     dirname = dir
