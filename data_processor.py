@@ -1,4 +1,5 @@
 import json
+import os
 
 def setGlyphs(src='test_glyphs'):
     with open('font.json') as json_file:
