@@ -24,15 +24,13 @@ def cropImages(filename):
         alpha[chr(n)] = []
 
     original = Image.open(filename)
-    original.crop((330, 370, 440, 550)).show()
 
     for i in range(len(d['char'])):
         print(d['char'][i])
-        print((d['right'][i], HEIGHT-d['top'][i], d['left'][i], HEIGHT-d['bottom'][i]))
+        print((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
         if d['char'][i].isalpha():
-            cropped = original.crop((WIDTH-d['right'][i], HEIGHT-d['top'][i], WIDTH-d['left'][i], HEIGHT-d['bottom'][i]))
+            cropped = original.crop((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
             alpha[d['char'][i].lower()].append(cropped)
-            cropped.show()
 
     return alpha
 
