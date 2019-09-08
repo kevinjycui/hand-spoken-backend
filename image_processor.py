@@ -50,5 +50,3 @@ def cropImages(filename, dir):
             plt.imshow(cropped)
             plt.savefig('my_fonts/'+dir+'/'+str(d['char'][i]) + ".svg", bbox_inches='tight', pad_inches=0)
             plt.close(fig)
-
-cropImages('text-jennifer.jpg', 'jennifer')
