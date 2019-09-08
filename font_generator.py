@@ -1,5 +1,3 @@
-#!/usr/bin/fontforge -script
-
 import sys
 import os.path
 import json
@@ -39,29 +37,25 @@ def setProperties(font, config):
 def addGlyphs(font, config):
     for k, v in config['glyphs'].items():
         g = font.createMappedChar(int(k, 0))
-        # Get outlines
         src = '%s.svg' % k
         if not isinstance(v, dict):
             v = {'src': v or src}
         src = '%s%s%s' % (config.get('input', '.'), os.path.sep, v.pop('src', src))
         g.importOutlines(src, IMPORT_OPTIONS)
         g.removeOverlap()
-        # Copy attributes
         for k2, v2 in v.items():
             if hasattr(g, k2):
                 if isinstance(v2, list):
                     v2 = tuple(v2)
                 setattr(g, k2, v2)
 
-def configFont(config_file):
+def configFont(config_file, user):
     config = loadConfig(config_file)
     os.chdir(os.path.dirname(config_file) or '.')
     font = fontforge.font()
     setProperties(font, config)
     addGlyphs(font, config)
     i = 0
-    while os.path.exists('handspoken-'+str(i)+'.ttf'):
+    while os.path.exists('my_fonts/hand-spoken-' + user + '-' + str(i) + '.ttf'):
         i += 1
-    font.generate('handspoken-'+str(i)+'.ttf')
-
-# vim: set filetype=python:
+    font.generate('my_fonts/hand-spoken-' + user + '-' + str(i) + '.ttf')
