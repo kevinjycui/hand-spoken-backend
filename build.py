@@ -51,10 +51,10 @@ def main(dir):
     dirname = dir
     i = 0
     while os.path.exists('my_fonts/'+dirname):
-        dirname = dir + str(i)
+        dirname = dir + '-' + str(i)
         i += 1
     print('Processing image source ...')
-    image_processor.cropImages(dirname+'.jpg', dirname)
+    image_processor.cropImages('src/images/'+dir+'.jpg', dirname)
     print('Building data objects ...')
     data_processor.setGlyphs(dirname)
     print('Configuring custom font ...')

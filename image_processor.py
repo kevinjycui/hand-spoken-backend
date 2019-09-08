@@ -9,13 +9,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 import os
 
-dev_user = input('Enter dev user for tesseract cmd ([s]teph, [k]evin):\n--> ').lower()
-if dev_user == 'steph' or dev_user == 's':
-    _c = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
-elif dev_user == 'kevin' or dev_user == 'k':
-    _c = r'C:\Users\kevin\AppData\Local\Tesseract-OCR\tesseract.exe'
-pt.tesseract_cmd = _c
-
 def processImage(filename):
     img = cv2.cvtColor(cv2.imread(filename), cv2.COLOR_BGR2GRAY)
     # alpha = 2.5
@@ -28,19 +21,30 @@ def processImage(filename):
     return d
 
 def cropImages(filename, dir):
-    d = processImage('src/images/'+filename)
-    img = cv2.imread('src/images/'+filename)
+    dev_user = input('Enter dev user for tesseract cmd ([s]teph, [k]evin, [j]enn):\n--> ').lower()
+    _c = ''
+    if dev_user == 'steph' or dev_user == 's':
+        _c = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
+    elif dev_user == 'kevin' or dev_user == 'k':
+        _c = r'C:\Users\kevin\AppData\Local\Tesseract-OCR\tesseract.exe'
+    elif dev_user == 'jenn' or dev_user == 'j':
+        _c = r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
+    pt.tesseract_cmd = _c
+    d = processImage(filename)
+    img = cv2.imread(filename)
     WIDTH, HEIGHT, _ = img.shape
 
-    original = Image.open('src/images/'+filename)
+    original = Image.open(filename)
     
     if not os.path.exists('my_fonts/'+dir):
         os.mkdir('my_fonts/'+dir)
 
+    a = 1
     for i in range(len(d['char'])):
-        print(d['char'][i])
         # print((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
-        if d['char'][i].isalpha():
+        if d['char'][i].isalpha() and d['char'][i] == d['char'][i].lower() and not os.path.exists('my_fonts/'+dir+'/'+str(d['char'][i]) + '.svg'):
+            print('Rendering image and building glyph for character: '+d['char'][i]+' ... ['+str(a)+' of 26]')
+            a += 1
             cropped = original.crop((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
             # cv2.imwrite(d['char'] + '.png',img)
             fig = plt.figure(frameon=False)
@@ -48,5 +52,5 @@ def cropImages(filename, dir):
             ax.set_axis_off()
             fig.add_axes(ax)
             plt.imshow(cropped)
-            plt.savefig('my_fonts/'+dir+'/'+str(d['char'][i]) + ".svg", bbox_inches='tight', pad_inches=0)
+            plt.savefig('my_fonts/'+dir+'/'+str(d['char'][i]) + '.svg', bbox_inches='tight', pad_inches=0)
             plt.close(fig)
