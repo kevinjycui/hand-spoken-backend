@@ -53,7 +53,7 @@ def addGlyphs(font, config):
                     v2 = tuple(v2)
                 setattr(g, k2, v2)
 
-def main(config_file):
+def configFont(config_file):
     config = loadConfig(config_file)
     os.chdir(os.path.dirname(config_file) or '.')
     font = fontforge.font()
@@ -63,12 +63,5 @@ def main(config_file):
     while os.path.exists('handspoken-'+str(i)+'.ttf'):
         i += 1
     font.generate('handspoken-'+str(i)+'.ttf')
-
-if __name__ == '__main__':
-    main('font.json')
-##    if len(sys.argv) > 1:
-##        main(sys.argv[1])
-##    else:
-##        sys.stderr.write("\nUsage: %s something.json\n" % sys.argv[0] )
 
 # vim: set filetype=python:

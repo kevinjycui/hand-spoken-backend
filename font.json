@@ -3,9 +3,9 @@
     , "descent": 200
     , "em": 1000
     , "family": "Hand Spoken"
-    }
-  , "input": "src"
-  , "glyphs":
+    }, 
+  "input": "src",
+  "glyphs":
     { 
         "0x30": { "src": "test_glyphs/0.svg" },
         "0x31": { "src": "test_glyphs/1.svg" },
