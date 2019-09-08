@@ -1,3 +1,6 @@
+# Hand Spoken
+![](gallery.jpg)
+
 ## Inspiration
 Handwriting is such a beautiful form of art that is unique to every person, yet unfortunately, it is not accessible to everyone.
 
