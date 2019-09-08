@@ -9,9 +9,9 @@ def main(dir):
         dirname = dir + str(i)
         i += 1
     print('Processing image source ...')
-    image_processor.cropImages(dirname+'jpg', dirname)
+    image_processor.cropImages(dirname+'.jpg', dirname)
     print('Building data objects ...')
-    data_processor.setGlyphs(dirname+'jpg', dirname)
+    data_processor.setGlyphs(dirname+'.jpg', dirname)
     print('Configuring custom font ...')
     font_generator.configFont('font.json', dir)
 

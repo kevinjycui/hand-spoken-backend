@@ -21,10 +21,6 @@ def cropImages(filename, dir):
     WIDTH, HEIGHT, _ = img.shape
     print((HEIGHT, WIDTH))
 
-    alpha = {}
-    for n in range(97, 123):
-        alpha[chr(n)] = []
-
     original = Image.open('src/images/'+filename)
     
     os.mkdir('my_fonts/'+dir)
@@ -34,7 +30,6 @@ def cropImages(filename, dir):
         # print((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
         if d['char'][i].isalpha():
             cropped = original.crop((d['left'][i], HEIGHT-d['top'][i]-1000, d['right'][i], HEIGHT-d['bottom'][i]-1000))
-            alpha[d['char'][i].lower()].append(cropped)
             # cv2.imwrite(d['char'] + '.png',img)
             fig = plt.figure(frameon=False)
             ax = plt.Axes(fig, [0., 0., 1., 1.])
@@ -43,6 +38,3 @@ def cropImages(filename, dir):
             plt.imshow(cropped)
             plt.savefig('my_fonts/'+dir+'/'+str(d['char'][i]) + ".svg", bbox_inches='tight', pad_inches=0)
             plt.close(fig)
-            
-    return alpha
-
